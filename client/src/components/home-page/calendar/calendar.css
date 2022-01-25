@@ -17,6 +17,10 @@
     flex: 0 1 50px;
 }
 
+.react-calendar__navigation .react-calendar__navigation__label {
+    font-size: 1.5em;
+}
+
 .react-calendar__month-view__days {
     height: calc(100vh - 220px);
 }
