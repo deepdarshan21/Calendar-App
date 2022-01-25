@@ -1,4 +1,4 @@
-// import "react-calendar/dist/Calendar.css";
+import "react-calendar/dist/Calendar.css";
 import "./calendar.css";
 import { useContext } from "react";
 import Calendar from "react-calendar";
@@ -8,7 +8,7 @@ const ShowCalendar = () => {
     const { dateSelected, selectNewDate } = useContext(AppContext);
 
     return (
-        <div className="">
+        <div className="calendar">
             <Calendar
                 className="calendar"
                 value={dateSelected}

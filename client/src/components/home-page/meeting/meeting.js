@@ -1,3 +1,4 @@
+import "./meeting.css"
 import { useContext } from "react";
 import moment from "moment";
 import { AppContext } from "../../../context/AppContext";
@@ -5,7 +6,7 @@ import { AppContext } from "../../../context/AppContext";
 const Meeting = () => {
     const { dateSelected } = useContext(AppContext);
     return (
-        <div>
+        <div className="meeting">
             <p>
                 Selected Date: <b>{moment(dateSelected).format("dddd, MMMM Do YYYY")}</b>
             </p>
