@@ -17,6 +17,42 @@ const AppReducer = (state, action) => {
                 showUpdateMeeting: !state.showUpdateMeeting,
                 showMeetingList: !state.showMeetingList,
             };
+        case "ADD_NEW_MEETING_DETAILS":
+            console.log(action.payload);
+            let isFound = false;
+            let yes = state.meetings.map((meeting) => {
+                // console.log("no");
+                if (
+                    meeting.date.setHours(0, 0, 0, 0) === action.payload.date.setHours(0, 0, 0, 0)
+                ) {
+                    console.log("Found");
+                    isFound = true;
+                    // console.log(meeting);
+                    meeting = {
+                        ...meeting,
+                        meetings: [...meeting.meetings, action.payload.meeting],
+                    };
+                    // console.log(meeting);
+                    //     meeting.meetings = [...meeting.meetings, action.payload.meeting];
+                }
+                return meeting;
+            });
+            console.log(isFound);
+            if (!isFound) {
+                console.log(isFound);
+                console.log("Check");
+                yes = [
+                    ...state.meetings,
+                    { date: action.payload.date, meetings: [action.payload.meeting] },
+                ];
+            }
+            console.log("Please");
+            console.log(yes);
+            console.log(state);
+            return {
+                ...state,
+                meetings: yes,
+            };
         default:
             return state;
     }

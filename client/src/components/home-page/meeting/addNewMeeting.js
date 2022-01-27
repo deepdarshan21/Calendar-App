@@ -9,10 +9,16 @@ const AddNewMeeting = () => {
     const [start, setStart] = useState();
     const [end, setEnd] = useState();
 
-    const { updateShowAddMeeting } = useContext(AppContext);
+    const { dateSelected, updateShowAddMeeting, addNewMeetingDetails } = useContext(AppContext);
 
     const addNewMeeting = () => {
         updateShowAddMeeting();
+        const newMeetingDetails = {
+            date: dateSelected,
+            meeting: { name, imp, link, start, end },
+        };
+        // console.log(newMeetingDetails);
+        addNewMeetingDetails(newMeetingDetails);
     };
 
     return (

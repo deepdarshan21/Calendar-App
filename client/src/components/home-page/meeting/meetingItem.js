@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { AppContext } from "../../../context/AppContext";
 
-const MeetingItem = () => {
+const MeetingItem = ({ name, imp, link, start, end }) => {
     const { updateShowUpdateMeeting } = useContext(AppContext);
 
     const updateMeeting = () => {
@@ -13,13 +13,13 @@ const MeetingItem = () => {
     return (
         <div className="meeting-item">
             <div className="meeting-item-details">
-                <h5>{"Name is Deepdarshan hello"}</h5>
-                <p>Importance: {"High"}</p>
-                <a href={"https://meet.com/"}>Join Now</a>
+                <h5>{name}</h5>
+                <p>Importance: {imp}</p>
+                <a href={link}>Join Now</a>
             </div>
             <div className="meeting-item-times">
-                <p>{"14:00"}</p>
-                <p>{"15:00"}</p>
+                <p>{start}</p>
+                <p>{end}</p>
             </div>
             <div className="meeting-item-edit-delete">
                 <AiFillEdit size={25} onClick={updateMeeting} />
