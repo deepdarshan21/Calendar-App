@@ -17,9 +17,23 @@ const AppProvider = (props) => {
             payload: newDate,
         });
     };
+    const changeShowNewMeeting = (load) => {
+        console.log("Load is comming: " + load);
+        dispatch({
+            type: "UPDATE_SHOW_NEW_MEETING",
+            payload: load,
+        });
+    };
 
     return (
-        <AppContext.Provider value={{ dateSelected: state.dateSelected, selectNewDate }}>
+        <AppContext.Provider
+            value={{
+                dateSelected: state.dateSelected,
+                showAddMeeting: state.showAddMeeting,
+                selectNewDate,
+                changeShowNewMeeting,
+            }}
+        >
             {props.children}
         </AppContext.Provider>
     );
