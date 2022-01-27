@@ -20,14 +20,11 @@ const AppProvider = (props) => {
     const updateShowAddMeeting = () => {
         dispatch({
             type: "UPDATE_SHOW_ADD_MEETING",
-            // payload: load,
         });
     };
-    const updateShowUpdateMeeting = (load) => {
-        console.log("Load: " + load);
+    const updateShowUpdateMeeting = () => {
         dispatch({
             type: "UPDATE_SHOW_UPDATE_MEETING",
-            // payload: load,
         });
     };
 

@@ -26,7 +26,6 @@ const Meeting = () => {
             </div>
             <div className="add-meeting">
                 {showAddMeeting && <AddNewMeeting />}
-                {/* {console.log("Value  of showUpdateMeeting: " + showUpdateMeeting)} */}
                 {showUpdateMeeting && <UpdateMeeting />}
                 {showMeetingList && (
                     <button className="btn btn-primary col-12" onClick={addNewMeeting}>

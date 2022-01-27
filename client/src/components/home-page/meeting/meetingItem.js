@@ -7,7 +7,6 @@ const MeetingItem = () => {
     const { updateShowUpdateMeeting } = useContext(AppContext);
 
     const updateMeeting = () => {
-        console.log("Clicked");
         updateShowUpdateMeeting(true);
     };
 
