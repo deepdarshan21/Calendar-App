@@ -6,7 +6,6 @@ const AppReducer = (state, action) => {
                 dateSelected: action.payload,
             };
         case "UPDATE_SHOW_NEW_MEETING":
-            console.log("Load is commit in reducer: " + action.payload);
             return {
                 ...state,
                 showAddMeeting: action.payload,

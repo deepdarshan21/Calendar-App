@@ -1,6 +1,6 @@
 const store = {
     dateSelected: new Date(),
-    showAddMeeting: "deep",
+    showAddMeeting: false,
 };
 
 export default store;

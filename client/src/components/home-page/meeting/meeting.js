@@ -9,8 +9,7 @@ const Meeting = () => {
     const { dateSelected, showAddMeeting, changeShowNewMeeting } = useContext(AppContext);
 
     const addNewMeeting = () => {
-        console.log("Clicked");
-        changeShowNewMeeting("deepdarshan");
+        changeShowNewMeeting(true);
     };
     return (
         <div className="meeting">
@@ -19,16 +18,14 @@ const Meeting = () => {
                 <p>{moment(dateSelected).format("MMMM Do YYYY")}</p>
             </div>
             <div className="add-meeting">
-                {console.log(showAddMeeting)}
                 {showAddMeeting && <AddNewMeeting />}
-                <button className="btn btn-primary col-12" onClick={addNewMeeting}>
-                    Add new Meeting
-                </button>
+                {!showAddMeeting && (
+                    <button className="btn btn-primary col-12" onClick={addNewMeeting}>
+                        Add new Meeting
+                    </button>
+                )}
             </div>
-
-            <div className="meetings-list">
-                <MeetingList />
-            </div>
+            <div className="meetings-list">{!showAddMeeting && <MeetingList />}</div>
         </div>
     );
 };

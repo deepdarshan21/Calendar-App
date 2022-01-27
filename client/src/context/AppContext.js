@@ -18,7 +18,6 @@ const AppProvider = (props) => {
         });
     };
     const changeShowNewMeeting = (load) => {
-        console.log("Load is comming: " + load);
         dispatch({
             type: "UPDATE_SHOW_NEW_MEETING",
             payload: load,
