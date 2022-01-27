@@ -17,10 +17,17 @@ const AppProvider = (props) => {
             payload: newDate,
         });
     };
-    const changeShowNewMeeting = (load) => {
+    const updateShowAddMeeting = () => {
         dispatch({
-            type: "UPDATE_SHOW_NEW_MEETING",
-            payload: load,
+            type: "UPDATE_SHOW_ADD_MEETING",
+            // payload: load,
+        });
+    };
+    const updateShowUpdateMeeting = (load) => {
+        console.log("Load: " + load);
+        dispatch({
+            type: "UPDATE_SHOW_UPDATE_MEETING",
+            // payload: load,
         });
     };
 
@@ -29,8 +36,11 @@ const AppProvider = (props) => {
             value={{
                 dateSelected: state.dateSelected,
                 showAddMeeting: state.showAddMeeting,
+                showUpdateMeeting: state.showUpdateMeeting,
+                showMeetingList: state.showMeetingList,
                 selectNewDate,
-                changeShowNewMeeting,
+                updateShowAddMeeting,
+                updateShowUpdateMeeting,
             }}
         >
             {props.children}

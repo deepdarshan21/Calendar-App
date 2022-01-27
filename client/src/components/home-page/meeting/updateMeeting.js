@@ -1,5 +1,6 @@
 import "./meeting.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../../../context/AppContext";
 
 const UpdateMeeting = () => {
     const [name, setName] = useState();
@@ -8,9 +9,15 @@ const UpdateMeeting = () => {
     const [start, setStart] = useState();
     const [end, setEnd] = useState();
 
+    const { updateShowUpdateMeeting } = useContext(AppContext);
+
+    const addNewMeeting = () => {
+        updateShowUpdateMeeting();
+    };
+
     return (
         <div>
-            <form>
+            <form onSubmit={addNewMeeting}>
                 <div>
                     <label htmlFor="name">Meeting Name</label>
                     <input

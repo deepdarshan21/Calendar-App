@@ -5,10 +5,17 @@ const AppReducer = (state, action) => {
                 ...state,
                 dateSelected: action.payload,
             };
-        case "UPDATE_SHOW_NEW_MEETING":
+        case "UPDATE_SHOW_ADD_MEETING":
             return {
                 ...state,
-                showAddMeeting: action.payload,
+                showAddMeeting: !state.showAddMeeting,
+                showMeetingList: !state.showMeetingList,
+            };
+        case "UPDATE_SHOW_UPDATE_MEETING":
+            return {
+                ...state,
+                showUpdateMeeting: !state.showUpdateMeeting,
+                showMeetingList: !state.showMeetingList,
             };
         default:
             return state;
