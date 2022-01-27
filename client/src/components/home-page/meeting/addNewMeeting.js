@@ -17,7 +17,6 @@ const AddNewMeeting = () => {
             date: dateSelected,
             meeting: { name, imp, link, start, end },
         };
-        // console.log(newMeetingDetails);
         addNewMeetingDetails(newMeetingDetails);
     };
 

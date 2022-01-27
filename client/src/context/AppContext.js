@@ -28,7 +28,6 @@ const AppProvider = (props) => {
         });
     };
     const addNewMeetingDetails = (newMeetingDetails) => {
-        console.log("dhak dhak");
         dispatch({
             type: "ADD_NEW_MEETING_DETAILS",
             payload: newMeetingDetails,

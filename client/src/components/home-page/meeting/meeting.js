@@ -21,7 +21,6 @@ const Meeting = () => {
     return (
         <div className="meeting">
             <div className="display-selected-date">
-                {/* {console.log(dateSelected)} */}
                 <p>{moment(dateSelected).format("dddd, ")}</p>
                 <p>{moment(dateSelected).format("MMMM Do YYYY")}</p>
             </div>
