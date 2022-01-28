@@ -45,6 +45,12 @@ const AppProvider = (props) => {
             payload: load,
         });
     };
+    const deleteMeeting = (id) => {
+        dispatch({
+            type: "DELETE_MEETING",
+            payload: id,
+        });
+    };
 
     return (
         <AppContext.Provider
@@ -61,6 +67,7 @@ const AppProvider = (props) => {
                 addNewMeetingDetails,
                 changeupdateMeetingDetails,
                 updateMeetingsDetails,
+                deleteMeeting,
             }}
         >
             {props.children}

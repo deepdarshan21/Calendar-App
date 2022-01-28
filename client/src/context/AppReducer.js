@@ -32,7 +32,6 @@ const AppReducer = (state, action) => {
             state.meetings.map((meeting) => {
                 if (meeting.date.setHours(0, 0, 0, 0) === state.dateSelected.setHours(0, 0, 0, 0)) {
                     meeting.meetings.map((meets) => {
-                        console.log(meets);
                         if (meets.id === action.payload.id) {
                             meets.name = action.payload.details.name;
                             meets.link = action.payload.details.link;
@@ -41,6 +40,15 @@ const AppReducer = (state, action) => {
                             meets.end = action.payload.details.end;
                         }
                     });
+                }
+            });
+            return { ...state };
+        case "DELETE_MEETING":
+            state.meetings.map((meeting) => {
+                if (meeting.date.setHours(0, 0, 0, 0) === state.dateSelected.setHours(0, 0, 0, 0)) {
+                    meeting.meetings = meeting.meetings.filter(
+                        (meets) => meets.id !== action.payload
+                    );
                 }
             });
             return { ...state };

@@ -4,12 +4,16 @@ import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { AppContext } from "../../../context/AppContext";
 
 const MeetingItem = ({ id, name, imp, link, start, end }) => {
-    const { updateShowUpdateMeeting,changeupdateMeetingDetails } = useContext(AppContext);
+    const { updateShowUpdateMeeting, changeupdateMeetingDetails, deleteMeeting } =
+        useContext(AppContext);
 
     const updateMeeting = () => {
         updateShowUpdateMeeting();
         changeupdateMeetingDetails(id);
+    };
 
+    const deleteAMeeting = () => {
+        deleteMeeting(id);
     };
 
     return (
@@ -26,7 +30,7 @@ const MeetingItem = ({ id, name, imp, link, start, end }) => {
             </div>
             <div className="meeting-item-edit-delete">
                 <AiFillEdit size={25} onClick={updateMeeting} />
-                <AiFillDelete size={25} />
+                <AiFillDelete size={25} onClick={deleteAMeeting} />
             </div>
         </div>
     );
