@@ -34,14 +34,12 @@ const AppProvider = (props) => {
         });
     };
     const changeupdateMeetingDetails = (id) => {
-        console.log(id);
         dispatch({
             type: "DISPALY_UPDATE_MEETING_DETAILS",
             payload: id,
         });
     };
     const updateMeetingsDetails = (load) => {
-        console.log("here");
         dispatch({
             type: "UPDATE_MEETING_DETAILS",
             payload: load,

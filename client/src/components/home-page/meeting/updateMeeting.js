@@ -14,12 +14,6 @@ const UpdateMeeting = () => {
     const [statestart, setStart] = useState(start);
     const [stateend, setEnd] = useState(end);
 
-    // const [statename, setName] = useState();
-    // const [statelink, setLink] = useState();
-    // const [stateimp, setImp] = useState("Default");
-    // const [statestart, setStart] = useState();
-    // const [stateend, setEnd] = useState();
-
     const updateMeeting = () => {
         updateShowUpdateMeeting();
         const load = {
@@ -37,8 +31,6 @@ const UpdateMeeting = () => {
 
     return (
         <div>
-            {/* {console.log(name, imp, link, start, end)} */}
-            {console.log(updateMeetingDetails)}
             <form onSubmit={updateMeeting}>
                 <div>
                     <label htmlFor="name">Meeting Name</label>
