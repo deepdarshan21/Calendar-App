@@ -15,8 +15,16 @@ const MeetingList = () => {
         <div>
             {!meetingFilter.length && <div>No Meeting Scheduled</div>}
             {meetingFilter.length !== 0 &&
-                meetingFilter[0].meetings.map(({ name, imp, link, start, end }) => (
-                    <MeetingItem name={name} imp={imp} link={link} start={start} end={end} />
+                meetingFilter[0].meetings.map(({ id, name, imp, link, start, end }) => (
+                    <MeetingItem
+                        key={id}
+                        id={id}
+                        name={name}
+                        imp={imp}
+                        link={link}
+                        start={start}
+                        end={end}
+                    />
                 ))}
         </div>
     );

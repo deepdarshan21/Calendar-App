@@ -3,16 +3,19 @@ import { useContext } from "react";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { AppContext } from "../../../context/AppContext";
 
-const MeetingItem = ({ name, imp, link, start, end }) => {
-    const { updateShowUpdateMeeting } = useContext(AppContext);
+const MeetingItem = ({ id, name, imp, link, start, end }) => {
+    const { updateShowUpdateMeeting,changeupdateMeetingDetails } = useContext(AppContext);
 
     const updateMeeting = () => {
-        updateShowUpdateMeeting(true);
+        updateShowUpdateMeeting();
+        changeupdateMeetingDetails(id);
+
     };
 
     return (
         <div className="meeting-item">
             <div className="meeting-item-details">
+                {/* {console.log(id)} */}
                 <h5>{name}</h5>
                 <p>Importance: {imp}</p>
                 <a href={link}>Join Now</a>

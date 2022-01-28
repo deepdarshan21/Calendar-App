@@ -3,6 +3,7 @@ const store = {
     showAddMeeting: false,
     showUpdateMeeting: false,
     showMeetingList: true,
+    updateMeetingDetails: {},
     meetings: [],
 };
 

@@ -1,5 +1,6 @@
 import "./meeting.css";
 import { useContext, useState } from "react";
+import {v4 as uuidv4} from "uuid"
 import { AppContext } from "../../../context/AppContext";
 
 const AddNewMeeting = () => {
@@ -15,8 +16,16 @@ const AddNewMeeting = () => {
         updateShowAddMeeting();
         const newMeetingDetails = {
             date: dateSelected,
-            meeting: { name, imp, link, start, end },
+            meeting: {
+                id: uuidv4(),
+                name,
+                imp,
+                link,
+                start,
+                end,
+            },
         };
+        console.log(newMeetingDetails);
         addNewMeetingDetails(newMeetingDetails);
     };
 

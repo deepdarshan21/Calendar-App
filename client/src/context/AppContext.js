@@ -33,6 +33,13 @@ const AppProvider = (props) => {
             payload: newMeetingDetails,
         });
     };
+    const changeupdateMeetingDetails = (id) => {
+        console.log(id);
+        dispatch({
+            type: "DISPALY_UPDATE_MEETING_DETAILS",
+            payload: id,
+        });
+    };
 
     return (
         <AppContext.Provider
@@ -41,11 +48,13 @@ const AppProvider = (props) => {
                 showAddMeeting: state.showAddMeeting,
                 showUpdateMeeting: state.showUpdateMeeting,
                 showMeetingList: state.showMeetingList,
+                updateMeetingDetails: state.updateMeetingDetails,
                 meetings: state.meetings,
                 selectNewDate,
                 updateShowAddMeeting,
                 updateShowUpdateMeeting,
                 addNewMeetingDetails,
+                changeupdateMeetingDetails,
             }}
         >
             {props.children}

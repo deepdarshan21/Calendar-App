@@ -3,28 +3,38 @@ import { useContext, useState } from "react";
 import { AppContext } from "../../../context/AppContext";
 
 const UpdateMeeting = () => {
-    const [name, setName] = useState();
-    const [link, setLink] = useState();
-    const [imp, setImp] = useState("Default");
-    const [start, setStart] = useState();
-    const [end, setEnd] = useState();
+    const { updateShowUpdateMeeting, updateMeetingDetails } = useContext(AppContext);
 
-    const { updateShowUpdateMeeting } = useContext(AppContext);
+    const { name, imp, link, start, end } = updateMeetingDetails[0];
 
-    const addNewMeeting = () => {
+    const [statename, setName] = useState(name);
+    const [statelink, setLink] = useState(link);
+    const [stateimp, setImp] = useState(imp);
+    const [statestart, setStart] = useState(start);
+    const [stateend, setEnd] = useState(end);
+
+    // const [statename, setName] = useState();
+    // const [statelink, setLink] = useState();
+    // const [stateimp, setImp] = useState("Default");
+    // const [statestart, setStart] = useState();
+    // const [stateend, setEnd] = useState();
+
+    const updateMeeting = () => {
         updateShowUpdateMeeting();
     };
 
     return (
         <div>
-            <form onSubmit={addNewMeeting}>
+            {/* {console.log(name, imp, link, start, end)} */}
+            {console.log(updateMeetingDetails)}
+            <form onSubmit={updateMeeting}>
                 <div>
                     <label htmlFor="name">Meeting Name</label>
                     <input
                         type="text"
                         id="name"
                         className="form-control"
-                        value={name}
+                        value={statename}
                         onChange={(e) => setName(e.target.value)}
                     />
                 </div>
@@ -34,7 +44,7 @@ const UpdateMeeting = () => {
                         type="text"
                         id="name"
                         className="form-control"
-                        value={link}
+                        value={statelink}
                         onChange={(e) => setLink(e.target.value)}
                     />
                 </div>
@@ -44,7 +54,7 @@ const UpdateMeeting = () => {
                         required="required"
                         className="form-control"
                         id="type"
-                        value={imp}
+                        value={stateimp}
                         onChange={(e) => setImp(e.target.value)}
                     >
                         <option value="Defult" hidden>
@@ -61,7 +71,7 @@ const UpdateMeeting = () => {
                             type="time"
                             id="start-time"
                             className="form-control"
-                            value={start}
+                            value={statestart}
                             onChange={(e) => setStart(e.target.value)}
                         />
                     </div>
@@ -71,7 +81,7 @@ const UpdateMeeting = () => {
                             type="time"
                             id="end-time"
                             className="form-control"
-                            value={end}
+                            value={stateend}
                             onChange={(e) => setEnd(e.target.value)}
                         />
                     </div>

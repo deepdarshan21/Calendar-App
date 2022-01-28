@@ -17,6 +17,23 @@ const AppReducer = (state, action) => {
                 showUpdateMeeting: !state.showUpdateMeeting,
                 showMeetingList: !state.showMeetingList,
             };
+        case "DISPALY_UPDATE_MEETING_DETAILS":
+            return {
+                ...state,
+                updateMeetingDetails: state.meetings
+                    .filter(
+                        (
+                            dateFilter /* {
+                        console.log(dateFilter.date.setHours(0, 0, 0, 0));
+                        console.log(state);
+                        return 0;
+                    } */
+                        ) =>
+                            dateFilter.date.setHours(0, 0, 0, 0) ===
+                            state.dateSelected.setHours(0, 0, 0, 0)
+                    )[0]
+                    .meetings.filter((idFilter) => idFilter.id === action.payload),
+            };
         case "ADD_NEW_MEETING_DETAILS":
             let isFound = false;
             let yes = state.meetings.map((meeting) => {
