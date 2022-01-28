@@ -40,6 +40,13 @@ const AppProvider = (props) => {
             payload: id,
         });
     };
+    const updateMeetingsDetails = (load) => {
+        console.log("here");
+        dispatch({
+            type: "UPDATE_MEETING_DETAILS",
+            payload: load,
+        });
+    };
 
     return (
         <AppContext.Provider
@@ -55,6 +62,7 @@ const AppProvider = (props) => {
                 updateShowUpdateMeeting,
                 addNewMeetingDetails,
                 changeupdateMeetingDetails,
+                updateMeetingsDetails,
             }}
         >
             {props.children}

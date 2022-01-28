@@ -3,9 +3,10 @@ import { useContext, useState } from "react";
 import { AppContext } from "../../../context/AppContext";
 
 const UpdateMeeting = () => {
-    const { updateShowUpdateMeeting, updateMeetingDetails } = useContext(AppContext);
+    const { updateShowUpdateMeeting, updateMeetingDetails, updateMeetingsDetails } =
+        useContext(AppContext);
 
-    const { name, imp, link, start, end } = updateMeetingDetails[0];
+    const { id, name, imp, link, start, end } = updateMeetingDetails[0];
 
     const [statename, setName] = useState(name);
     const [statelink, setLink] = useState(link);
@@ -21,6 +22,17 @@ const UpdateMeeting = () => {
 
     const updateMeeting = () => {
         updateShowUpdateMeeting();
+        const load = {
+            id,
+            details: {
+                name: statename,
+                link: statelink,
+                imp: stateimp,
+                start: statestart,
+                end: stateend,
+            },
+        };
+        updateMeetingsDetails(load);
     };
 
     return (
